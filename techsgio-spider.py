@@ -1,6 +1,13 @@
 import scrapy
+import json
 
 pagecount = 1
+url_array = []
+
+with open('sample.json') as json_data:
+    d = json.load(json_data)
+    print (d)
+
 class BlogSpider(scrapy.Spider):
     name = 'techsgiospider'
     start_urls = ['http://techsg.io/ecosystem?show=Startup&keyword=All&page=1']
